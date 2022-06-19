@@ -49,7 +49,11 @@ public class LoadedMap extends Map{
                     continue;
 
                 case 0xffb4b3b0:
-                    tilesColection[i] = Tile.CENTRO_CARRETERA;
+                    tilesColection[i] = Tile.CENTRO_CARRETERA_VERTICAL;
+                    continue;
+
+                case 0xffd0fff1:
+                    tilesColection[i] = Tile.CENTRO_CARRETERA_HORIZONTAL;
                     continue;
 
                 case 0xff6f6e6d:
@@ -76,8 +80,16 @@ public class LoadedMap extends Map{
                     tilesColection[i] = Tile.PUERTA_INTERMEDIA_IZQUIERDA;
                     continue;
 
+                case 0xffca6f00:
+                    tilesColection[i] = Tile.PUERTA_INTERMEDIA_DERECHA;
+                    continue;
+
                 case 0xffbf7531:
                     tilesColection[i] = Tile.PUERTA_SUPERIOR_IZQUIERDA;
+                    continue;
+
+                case 0xffa67232:
+                    tilesColection[i] = Tile.PUERTA_SUPERIOR_DERECHA;
                     continue;
 
                 case 0xffc46811:

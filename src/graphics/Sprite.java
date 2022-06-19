@@ -16,13 +16,16 @@ public final class Sprite {
     public final static Sprite ARENA = new Sprite(32,1,0,0,HojaSprites.desert);
     public final static Sprite VACIO = new Sprite(32,0);
     public final static Sprite BORDE_CARRETERA = new Sprite(32,2,0, 0,HojaSprites.desert);
-    public final static Sprite CENTRO_CARRETERA = new Sprite(32,3,0,0, HojaSprites.desert);
+    public final static Sprite CENTRO_CARRETERA_VERTICAL = new Sprite(32,3,0,0, HojaSprites.desert);
+    public final static Sprite CENTRO_CARRETERA_HORIZONTAL = new Sprite(32,3,0,4, HojaSprites.desert);
     public final static Sprite ESQUINA_CARRETERA = new Sprite(32,4,0,0, HojaSprites.desert);
     public final static Sprite PARED_PIEDRA = new Sprite(32,5,0,0,HojaSprites.desert);
     public final static Sprite PARED_PIEDRA_INFERIOR = new Sprite(32,6,0,0, HojaSprites.desert);
     public final static Sprite PARED_PIEDRA_CARRETERA = new Sprite(32,0,3,0,HojaSprites.desert);
     public final static Sprite PUERTA_SUPERIOR_IZQUIERDA = new Sprite(32,7,0,0,HojaSprites.desert);
+    public final static Sprite PUERTA_SUPERIOR_DERECHA = new Sprite(32,7,0,1,HojaSprites.desert);
     public final static Sprite PUERTA_INTERMEDIA_IZQUIERDA = new Sprite(32,7,1,0,HojaSprites.desert);
+    public final static Sprite PUERTA_INTERMEDIA_DERECHA = new Sprite(32,7,1,1,HojaSprites.desert);
     public final static Sprite PUERTA_INFERIOR = new Sprite(32,8,1,0,HojaSprites.desert);
     public final static Sprite OXIDO = new Sprite(32, 9, 0,0, HojaSprites.desert);
     public final static Sprite PUERTA_SUPERIOR_CENTRAL = new Sprite(32,8,0,0,HojaSprites.desert);
@@ -149,20 +152,49 @@ public final class Sprite {
     //4
     private void rotate90L(int[] tempPixels){
         int i = 0;
+
+        for(int x = lado - 1; x > -1; x--){
+            for(int y  = 0; y < lado; y++ ){
+                pixels[i] = tempPixels[x+y*lado];
+                i++;
+            }
+        }
+
     }
 
     //5
     private void rotate90R(int[] tempPixels){
+        int i = 0;
 
+        for(int x = 0; y < lado; x++){
+            for(int y  = lado - 1; y > -1; y-- ){
+                pixels[i] = tempPixels[x+y*lado];
+                i++;
+            }
+        }
     }
 
     //6
     private void rotate90LYinverted(int[] tempPixels){
+        int i = 0;
 
+        for(int x = 0; x < lado; x++){
+            for(int y  = 0; y < lado; y++ ){
+                pixels[i] = tempPixels[x+y*lado];
+                i++;
+            }
+        }
     }
 
     //7
     private void rotate90RYinverted(int[] tempPixels){
+        int i = 0;
 
+        for(int x = lado - 1; x > -1; x--){
+            for(int y  = lado - 1; y > -1; y-- ){
+                pixels[i] = tempPixels[x+y*lado];
+                i++;
+            }
+        }
     }
 }

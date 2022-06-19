@@ -16,13 +16,16 @@ public class Tile {
     public static final Tile VACIO = new Tile(Sprite.VACIO);
     public static final Tile ARENA = new Tile(Sprite.ARENA);
     public static final Tile BORDE_CARRETERA = new Tile(Sprite.BORDE_CARRETERA);
-    public static final Tile CENTRO_CARRETERA = new Tile(Sprite.CENTRO_CARRETERA);
+    public static final Tile CENTRO_CARRETERA_VERTICAL = new Tile(Sprite.CENTRO_CARRETERA_VERTICAL);
+    public static final Tile CENTRO_CARRETERA_HORIZONTAL = new Tile(Sprite.CENTRO_CARRETERA_HORIZONTAL);
     public static final Tile ESQUINA_CARRETERA = new Tile(Sprite.ESQUINA_CARRETERA);
     public static final Tile PARED_PIEDRA = new Tile(Sprite.PARED_PIEDRA);
     public static final Tile PARED_PIEDRA_INFERIOR = new Tile(Sprite.PARED_PIEDRA_INFERIOR);
     public static final Tile PARED_PIEDRA_CARRETERA = new Tile(Sprite.PARED_PIEDRA_CARRETERA);
     public static final Tile PUERTA_SUPERIOR_IZQUIERDA = new Tile(Sprite.PUERTA_SUPERIOR_IZQUIERDA);
+    public static final Tile PUERTA_SUPERIOR_DERECHA = new Tile(Sprite.PUERTA_SUPERIOR_DERECHA);
     public static final Tile PUERTA_INTERMEDIA_IZQUIERDA = new Tile(Sprite.PUERTA_INTERMEDIA_IZQUIERDA);
+    public static final Tile PUERTA_INTERMEDIA_DERECHA = new Tile(Sprite.PUERTA_INTERMEDIA_DERECHA);
     public static final Tile PUERTA_INFERIOR = new Tile(Sprite.PUERTA_INFERIOR);
     public static final Tile OXIDO = new Tile(Sprite.OXIDO);
     public static final Tile PUERTA_SUPERIOR_CENTRAL = new Tile(Sprite.PUERTA_SUPERIOR_CENTRAL);

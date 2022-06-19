@@ -77,7 +77,7 @@ public abstract class Map {
                 return Tile.BORDE_CARRETERA;
 
             case 3:
-                return Tile.CENTRO_CARRETERA;
+                return Tile.CENTRO_CARRETERA_VERTICAL;
 
             case 4:
                 return Tile.ESQUINA_CARRETERA;
