@@ -15,13 +15,20 @@ public final class Sprite {
     public final static Sprite ASFALTO = new Sprite(32, 0,0,0, HojaSprites.desert);
     public final static Sprite ARENA = new Sprite(32,1,0,0,HojaSprites.desert);
     public final static Sprite VACIO = new Sprite(32,0);
-    public final static Sprite BORDE_CARRETERA = new Sprite(32,2,0, 0,HojaSprites.desert);
+    public final static Sprite BORDE_CARRETERA_IZQUIERDA = new Sprite(32,2,0, 0,HojaSprites.desert);
+    public final static Sprite BORDE_CARRETERA_DERECHA = new Sprite(32,2,0, 1,HojaSprites.desert);
+    public final static Sprite BORDE_CARRETERA_ARRIBA = new Sprite(32,2,0, 6,HojaSprites.desert);
+    public final static Sprite BORDE_CARRETERA_ABAJO = new Sprite(32,2,0, 4,HojaSprites.desert);
     public final static Sprite CENTRO_CARRETERA_VERTICAL = new Sprite(32,3,0,0, HojaSprites.desert);
     public final static Sprite CENTRO_CARRETERA_HORIZONTAL = new Sprite(32,3,0,4, HojaSprites.desert);
     public final static Sprite ESQUINA_CARRETERA = new Sprite(32,4,0,0, HojaSprites.desert);
+    public final static Sprite ESQUINA_CARRETERA_B = new Sprite(32,4,0,5, HojaSprites.desert);
+    public final static Sprite ESQUINA_CARRETERA_C = new Sprite(32,4,0,6, HojaSprites.desert);
+    public final static Sprite ESQUINA_CARRETERA_D = new Sprite(32,4,0,4, HojaSprites.desert);
     public final static Sprite PARED_PIEDRA = new Sprite(32,5,0,0,HojaSprites.desert);
     public final static Sprite PARED_PIEDRA_INFERIOR = new Sprite(32,6,0,0, HojaSprites.desert);
     public final static Sprite PARED_PIEDRA_CARRETERA = new Sprite(32,0,3,0,HojaSprites.desert);
+    public final static Sprite PARED_PIEDRA_CARRETERA_B = new Sprite(32,0,3,1,HojaSprites.desert);
     public final static Sprite PUERTA_SUPERIOR_IZQUIERDA = new Sprite(32,7,0,0,HojaSprites.desert);
     public final static Sprite PUERTA_SUPERIOR_DERECHA = new Sprite(32,7,0,1,HojaSprites.desert);
     public final static Sprite PUERTA_INTERMEDIA_IZQUIERDA = new Sprite(32,7,1,0,HojaSprites.desert);
@@ -166,7 +173,7 @@ public final class Sprite {
     private void rotate90R(int[] tempPixels){
         int i = 0;
 
-        for(int x = 0; y < lado; x++){
+        for(int x = 0; x < lado; x++){
             for(int y  = lado - 1; y > -1; y-- ){
                 pixels[i] = tempPixels[x+y*lado];
                 i++;

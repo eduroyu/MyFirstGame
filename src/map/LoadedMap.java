@@ -45,7 +45,19 @@ public class LoadedMap extends Map{
                     continue;
 
                 case 0xffc19c19:
-                    tilesColection[i] = Tile.BORDE_CARRETERA;
+                    tilesColection[i] = Tile.BORDE_CARRETERA_IZQUIERDA;
+                    continue;
+
+                case 0xffd2c425:
+                    tilesColection[i] = Tile.BORDE_CARRETERA_DERECHA;
+                    continue;
+
+                case 0xffffec1f:
+                    tilesColection[i] = Tile.BORDE_CARRETERA_ARRIBA;
+                    continue;
+
+                case 0xffffea00:
+                    tilesColection[i] = Tile.BORDE_CARRETERA_ABAJO;
                     continue;
 
                 case 0xffb4b3b0:
@@ -60,6 +72,18 @@ public class LoadedMap extends Map{
                     tilesColection[i] = Tile.ESQUINA_CARRETERA;
                     continue;
 
+                case 0xffb65a5a:
+                    tilesColection[i] = Tile.ESQUINA_CARRETERA_B;
+                    continue;
+
+                case 0xffe69696:
+                    tilesColection[i] = Tile.ESQUINA_CARRETERA_C;
+                    continue;
+
+                case 0xfff45555:
+                    tilesColection[i] = Tile.ESQUINA_CARRETERA_D;
+                    continue;
+
                 case 0xff3b3b3b:
                     tilesColection[i] = Tile.PARED_PIEDRA;
                     continue;
@@ -70,6 +94,10 @@ public class LoadedMap extends Map{
 
                 case 0xff5f452d:
                     tilesColection[i] = Tile.PARED_PIEDRA_CARRETERA;
+                    continue;
+
+                case 0xff301d06:
+                    tilesColection[i] = Tile.PARED_PIEDRA_CARRETERA_B;
                     continue;
 
                 case 0xff886748:
