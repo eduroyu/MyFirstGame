@@ -1,6 +1,7 @@
 package game;
 
 import control.Teclado;
+import entities.creatures.Player;
 import graphics.Pantalla;
 import map.LoadedMap;
 import map.Map;
@@ -28,15 +29,13 @@ public class Juego extends Canvas implements Runnable {
     private static int fps = 0;
     private static int aps = 0;
 
-    private static int x = 0;
-    private static int y = 0;
-
     private static JFrame ventana;
     private static Thread thread;
     private static Teclado teclado;
     private static Pantalla pantalla;
 
     private static Map map;
+    private static Player player;
 
     private static BufferedImage imagen = new BufferedImage(ANCHO, ALTO,
             BufferedImage.TYPE_INT_RGB);
@@ -51,12 +50,11 @@ public class Juego extends Canvas implements Runnable {
 
         pantalla = new Pantalla(ANCHO, ALTO);
 
-        //Numero de tiles de tamaño
-        //map = new GeneratedMap(128, 128);
-        map = new LoadedMap("/maps/desertMap.png");
-
         teclado = new Teclado();
         addKeyListener(teclado);
+
+        map = new LoadedMap("/maps/desertMap.png");
+        player = new Player(teclado);
 
         ventana = new JFrame(NOMBRE);
         ventana.setResizable(false);
@@ -98,21 +96,7 @@ public class Juego extends Canvas implements Runnable {
     private void update(){
         teclado.update();
 
-        if(teclado.arriba){
-            y--;
-        }
-
-        if(teclado.abajo){
-            y++;
-        }
-
-        if(teclado.izquierda){
-            x--;
-        }
-
-        if(teclado.derecha){
-            x++;
-        }
+        player.update();
 
         if(teclado.salir){
             System.exit(0);
@@ -133,7 +117,7 @@ public class Juego extends Canvas implements Runnable {
         }
 
         pantalla.clean();
-        map.showGame(x,y,pantalla);
+        map.showGame(player.getX(), player.getY(), pantalla);
 
         //Como bucle for pero mas elegante y menos costoso
         System.arraycopy(pantalla.pixels, 0, pixels, 0, pixels.length);
@@ -146,6 +130,8 @@ public class Juego extends Canvas implements Runnable {
 
         g.drawString(CONTADOR_APS, 10, 15);
         g.drawString(CONTADOR_FPS, 10, 30);
+        g.drawString("X: " + player.getX(),10,45);
+        g.drawString("Y: " +player.getY(),10,60);
         //Libera la memoria de g
         g.dispose();
 

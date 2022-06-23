@@ -3,6 +3,7 @@ package map.tile;
 import graphics.Pantalla;
 import graphics.Sprite;
 
+
 public class Tile {
     public int x;
     public int y;
